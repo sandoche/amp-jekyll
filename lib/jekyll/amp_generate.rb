@@ -31,7 +31,7 @@ module Jekyll
     priority :low
     def generate(site)
       dir = site.config['ampdir'] || 'amp'
-      site.posts.docs.each do |post|
+      site.pages.docs.each do |post|
         next if post.data['skip_amp'] == true
         site.pages << AmpPost.new(site, site.source, File.join(dir, post.id), post)
       end
