@@ -33,7 +33,7 @@ module Jekyll
       dir = site.config['ampdir'] || 'amp'
       site.pages.each do |post|
         next if post.data['skip_amp'] == true
-        site.pages << AmpPost.new(site, site.source, File.join(dir, post.id), post)
+        site.pages << AmpPost.new(site, site.source, File.join(dir, post), post)
       end
     end
   end
