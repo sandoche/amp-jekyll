@@ -36,7 +36,7 @@ module Jekyll
         next if post['skip_amp'] == true
         pages << AmpPost.new(site, site.source, File.join(dir, post['title']), post)
       end
-      site.pages = pages
+      site.pages += pages
     end
   end
 end
