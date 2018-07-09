@@ -3,6 +3,7 @@
 Jekyll plugin for creating Accelerated Mobile Page versions of pages. Supports Jekyll version 3.
 
 A fork from: https://github.com/juusaw/amp-jekyll
+
 In this fork the AMP is generated for pages instead of Posts!
 
 ### Usage
