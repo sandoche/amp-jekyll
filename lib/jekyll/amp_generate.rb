@@ -31,10 +31,13 @@ module Jekyll
     priority :low
     def generate(site)
       dir = site.config['ampdir'] || 'amp'
+      # Little changes that uses pages instead of posts!
+      pages = Array.new
       site.posts.docs.each do |post|
-        next if post.data['skip_amp'] == true
-        site.pages << AmpPost.new(site, site.source, File.join(dir, post.id), post)
+        next if post['skip_amp'] == true
+        pages << AmpPost.new(site, site.source, File.join(dir, post['permalink']), post)
       end
+      site.pages += pages
     end
   end
 end
